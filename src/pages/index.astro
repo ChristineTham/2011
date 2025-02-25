@@ -9,8 +9,7 @@ import coverImage from '../common/my_feed.svg'
 import socialImage from '../common/my_feed.png'
 
 const posts = await getPosts()
-
-const year = posts[0].data.pubDate!.getFullYear()
+const year = posts.length ? posts[0].data.pubDate!.getFullYear() : '2011'
 const frontmatter: CollectionEntry<'page'>['data'] = {
   title: 'What happened in ' + year,
   description: 'These are some of the things I did and articles I have written in ' + year,
